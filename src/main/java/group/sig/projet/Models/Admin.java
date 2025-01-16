@@ -20,4 +20,5 @@ public class Admin {
     private String password;
     private String role;
     private UUID structure;
+    private UUID campagneId;
 }

@@ -20,4 +20,5 @@ public class Resultats {
     private UUID candidatID;
     private Integer nbVoix;
     private String pv;
+    private UUID campagneId;
 }

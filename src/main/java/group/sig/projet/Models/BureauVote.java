@@ -21,4 +21,5 @@ public class BureauVote {
     private String arrondissement;
     private UUID centreId;
     private UUID adminId;
+    private UUID campagneId;
 }

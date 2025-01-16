@@ -21,4 +21,5 @@ public class CentreVote {
     private String region;
     private String department;
     private UUID adminId;
+    private UUID campagneId;
 }
