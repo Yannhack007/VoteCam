@@ -2,9 +2,11 @@ package group.sig.projet.Services;
 
 import group.sig.projet.Models.Campagne;
 import group.sig.projet.Repositories.CampagneRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class CampagneServices {
     private CampagneRepository campagneRepository;
 

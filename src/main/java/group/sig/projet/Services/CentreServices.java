@@ -4,9 +4,11 @@ import group.sig.projet.Models.Admin;
 import group.sig.projet.Models.CentreVote;
 import group.sig.projet.Repositories.AdminRepository;
 import group.sig.projet.Repositories.CentreRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Service
 public class CentreServices {
     private CentreRepository centreRepository;
     private AdminRepository adminRepository;
