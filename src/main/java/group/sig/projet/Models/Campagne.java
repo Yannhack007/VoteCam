@@ -20,5 +20,5 @@ public class Campagne {
     private String name;
     private LocalDate startingDate;
     private LocalDate endingDate;
-
+    private String state; //En cours, terminé,
 }

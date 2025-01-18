@@ -22,4 +22,5 @@ public class BureauVote {
     private UUID centreId;
     private UUID adminId;
     private UUID campagneId;
+    private Integer nbElecteurs;
 }

@@ -12,12 +12,15 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity
-public class Candidat {
+public class Parti {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
-    private String parti;
+    private String candidateName;
+    private Integer candidateAge;
+    private String candidateNationality;
+    private String color;
     private UUID campagneId;
 
 }
