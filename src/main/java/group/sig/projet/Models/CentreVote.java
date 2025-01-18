@@ -22,4 +22,60 @@ public class CentreVote {
     private String department;
     private UUID adminId;
     private UUID campagneId;
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public UUID getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(UUID adminId) {
+        this.adminId = adminId;
+    }
+
+    public UUID getCampagneId() {
+        return campagneId;
+    }
+
+    public void setCampagneId(UUID campagneId) {
+        this.campagneId = campagneId;
+    }
 }
