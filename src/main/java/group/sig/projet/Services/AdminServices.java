@@ -13,6 +13,10 @@ public class AdminServices {
     private PasswordHasher hasher=new PasswordHasher();
     private AdminRepository adminRepository;
 
+    public AdminServices(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
+
     public String addNewAdmin(Admin admin){
         admin.setId(UUID.randomUUID());
         admin.setPassword(hasher.hashPassword(admin.getPassword()));

@@ -9,6 +9,5 @@ import java.util.UUID;
 @Repository
 public interface AdminRepository extends CrudRepository<Admin, UUID> {
     Admin findByUsername(String username);
-    Iterable<Admin> findAllByBureauId(UUID bureauId);
-    Iterable<Admin> findAllByCentreVoteId(UUID uuid);
+    Iterable<Admin> findAllByStructure(UUID structure);
 }

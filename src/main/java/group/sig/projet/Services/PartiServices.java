@@ -22,17 +22,17 @@ public class PartiServices {
     }
 
     // 2. Retrouver un parti à partir de son nom
-    public List<PartiRepository> findPartiByName(String name) {
+    public Iterable<Parti> findPartiByName(String name) {
         return partiRepository.findByName(name);
     }
 
     // 3. Retrouver un parti à partir de son candidat
-    public List<PartiRepository> findPartiByCandidateName(String candidateName) {
+    public Iterable<Parti> findPartiByCandidateName(String candidateName) {
         return partiRepository.findByCandidateName(candidateName);
     }
 
     // 4. Retrouver un parti à partir de sa couleur
-    public List<PartiRepository> findPartiByColor(String color) {
+    public Iterable<Parti> findPartiByColor(String color) {
         return partiRepository.findByColor(color);
     }
 

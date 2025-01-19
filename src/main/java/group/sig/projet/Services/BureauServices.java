@@ -16,6 +16,12 @@ public class BureauServices {
     private AdminRepository adminRepository;
     private ResultatRepository resultatRepository;
 
+    public BureauServices(BureauRepository bureauRepository, AdminRepository adminRepository, ResultatRepository resultatRepository) {
+        this.bureauRepository = bureauRepository;
+        this.adminRepository = adminRepository;
+        this.resultatRepository = resultatRepository;
+    }
+
     public String addBureau(BureauVote bureauVote){
         bureauVote.setId(UUID.randomUUID());
         bureauRepository.save(bureauVote);
@@ -41,7 +47,7 @@ public class BureauServices {
             throw new IllegalArgumentException("Bureau not found");
         }
 
-        return adminRepository.findAllByBureauId(bureauId);
+        return adminRepository.findAllByStructure(bureauId);
     }
 
     public String validateResultats(UUID resultatId){

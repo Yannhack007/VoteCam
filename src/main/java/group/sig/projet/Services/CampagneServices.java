@@ -10,6 +10,10 @@ import java.util.UUID;
 public class CampagneServices {
     private CampagneRepository campagneRepository;
 
+    public CampagneServices(CampagneRepository campagneRepository) {
+        this.campagneRepository = campagneRepository;
+    }
+
     public String addCampagne(Campagne campagne){
         campagne.setId(UUID.randomUUID());
         campagneRepository.save(campagne);

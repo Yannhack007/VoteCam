@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+<h1>Résultats validés</h1>
+<ul id="results"></ul>
+
+<script>
+    const socket = new SockJS('/ws');
+    const stompClient = Stomp.over(socket);
+
+    stompClient.connect({}, () => {
+        console.log('Connecté au WebSocket.');
+
+        // S'abonner au topic
+        stompClient.subscribe('/topic/validated-results', (message) => {
+            const result = JSON.parse(message.body);
+            const list = document.getElementById('results');
+            const item = document.createElement('li');
+            item.textContent = `Candidat: ${result.candidatID}, Votes: ${result.nbVoix}, Bureau: ${result.bureauId}`;
+            list.appendChild(item);
+        });
+    });
+</script>
+</body>
+</html>

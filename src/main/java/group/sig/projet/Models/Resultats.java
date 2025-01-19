@@ -10,13 +10,12 @@ import java.util.UUID;
 @Setter
 @Entity
 public class Resultats {
-    @Setter
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private UUID bureauId;
     private UUID candidatID;
+
     private Integer nbVoix;
     private String pvPath;
     private UUID campagneId;
@@ -29,5 +28,13 @@ public class Resultats {
         SENT,       // Envoyé pour validation
         VALIDATED,  // Validé par l'admin
         REJECTED    // Rejeté par l'admin
+    }
+
+    public void setStatus(VoteStatus status) {
+        this.status = status;
+    }
+
+    public void setPvPath(String pvPath) {
+        this.pvPath = pvPath;
     }
 }

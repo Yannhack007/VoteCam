@@ -2,6 +2,7 @@ package group.sig.projet.Services;
 
 import group.sig.projet.Models.Resultats;
 import group.sig.projet.Repositories.ResultatRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,8 +14,11 @@ import java.util.UUID;
 @Service
 public class ResultatServices{
     private final ResultatRepository resultatRepository;
+    private final WebSocketNotificationService notificationService;
 
-    public ResultatServices(ResultatRepository resultatRepository){
+    @Autowired
+    public ResultatServices(ResultatRepository resultatRepository,WebSocketNotificationService notificationService){
+        this.notificationService=notificationService;
         this.resultatRepository=resultatRepository;
     }
 
@@ -53,6 +57,9 @@ public class ResultatServices{
             Resultats resultat = optionalResultat.get();
             resultat.setStatus(newStatus);
             resultatRepository.save(resultat);
+            if(newStatus== Resultats.VoteStatus.SENT){
+                notificationService.sendValidatedResultNotification(resultat);
+            }
             return "Statut du résultat mis à jour : " + newStatus;
         }
         return "Résultat introuvable.";

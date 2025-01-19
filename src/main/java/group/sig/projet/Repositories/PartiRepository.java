@@ -9,11 +9,11 @@ import java.util.UUID;
 
 @Repository
 public interface PartiRepository extends CrudRepository<Parti, UUID> {
-    List<PartiRepository> findByName(String name);
+    Iterable<Parti> findByName(String name);
 
     // Trouver un parti par candidat
-    List<PartiRepository> findByCandidateName(String candidateName);
+    Iterable<Parti> findByCandidateName(String candidateName);
 
     // Trouver un parti par couleur
-    List<PartiRepository> findByColor(String color);
+    Iterable<Parti> findByColor(String color);
 }
