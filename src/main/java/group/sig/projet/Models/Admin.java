@@ -19,7 +19,7 @@ public class Admin {
     private String username;
     private String password;
     private String role;
-    private UUID structure;
+    private UUID structure; //Bureau or Centre
     private UUID campagneId;
 
     public UUID getId() {
